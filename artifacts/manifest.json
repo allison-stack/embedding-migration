@@ -1,0 +1,9 @@
+{
+  "seed": 42,
+  "source": "BeIR/msmarco",
+  "corpus_hash": "984324153e88c65c",
+  "queries_hash": "181e1951e4eed18a",
+  "n_corpus": 10000,
+  "n_queries": 500,
+  "n_qrels": 534
+}
