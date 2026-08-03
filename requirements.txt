@@ -2,3 +2,6 @@ datasets
 pandas
 pyarrow
 ftfy
+sentence-transformers
+einops
+pytrec_eval-terrier
