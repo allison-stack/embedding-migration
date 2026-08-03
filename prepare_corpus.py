@@ -21,6 +21,7 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+import ftfy
 
 import pandas as pd
 from datasets import load_dataset
@@ -109,9 +110,11 @@ def main():
         .reset_index(drop=True)
     )
     corpus_out = corpus_out.rename(columns={"_id": "doc_id"})
+    title = corpus_out["title"] if "title" in corpus_out.columns else pd.Series("", index=corpus_out.index)
     corpus_out["text"] = (
-        corpus_out.get("title", "").fillna("").str.strip() + " " + corpus_out["text"].str.strip()
+        title.fillna("").str.strip() + " " + corpus_out["text"].str.strip()
     ).str.strip()
+    corpus_out["text"] = corpus_out["text"].map(ftfy.fix_text)
     corpus_out = corpus_out[["doc_id", "text"]]
     corpus_out.insert(0, "row_idx", range(len(corpus_out)))
 
@@ -121,6 +124,7 @@ def main():
         .sort_values("query_id")               # deterministic order
         .reset_index(drop=True)[["query_id", "text"]]
     )
+    queries_out["text"] = queries_out["text"].map(ftfy.fix_text)
     queries_out.insert(0, "row_idx", range(len(queries_out)))
 
     # ---- 4. qrels in pure integer index space ----------------------------
