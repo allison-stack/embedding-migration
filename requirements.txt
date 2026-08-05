@@ -3,5 +3,6 @@ pandas
 pyarrow
 ftfy
 sentence-transformers
+transformers>=4.44,<5
 einops
 pytrec_eval-terrier
