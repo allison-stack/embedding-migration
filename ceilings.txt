@@ -1,0 +1,6 @@
+recall@10 = 0.99600  (/workspace/data/embeddings/Alibaba-NLP_gte-base-en-v1.5/)
+recall@10 = 0.99800  (/workspace/data/embeddings/BAAI_bge-base-en-v1.5/)
+recall@10 = 0.99800  (/workspace/data/embeddings/Qwen_Qwen3-Embedding-0.6B/)
+recall@10 = 0.99800  (/workspace/data/embeddings/Qwen_Qwen3-Embedding-4B/)
+recall@10 = 1.00000  (/workspace/data/embeddings/intfloat_e5-base-v2/)
+recall@10 = 0.99800  (/workspace/data/embeddings/nomic-ai_nomic-embed-text-v1.5/)
