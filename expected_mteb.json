@@ -1,0 +1,29 @@
+{
+  "_note": "SciFact ndcg@10, scale 0-1. Source: github.com/embeddings-benchmark/results",
+  "_scale": "0-1",
+  "_tolerance_points": 0.02,
+  "intfloat/e5-base-v2": {
+    "ndcg_at_10": 0.74754,
+    "source": "results/intfloat__e5-base-v2/1c644c92ad3ba1efdad3f1451a637716616a20e8/LMEB_SciFact.json"
+  },
+  "BAAI/bge-base-en-v1.5": {
+    "ndcg_at_10": 0.77752,
+    "source": "results/BAAI__bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/LMEB_SciFact.json"
+  },
+  "Alibaba-NLP/gte-base-en-v1.5": {
+    "ndcg_at_10": 0.73547,
+    "source": "results/Alibaba-NLP__gte-base-en-v1.5/a829fd0e060bb84554da0dfd354d0de0f7712b7f/LMEB_SciFact.json"
+  },
+  "nomic-ai/nomic-embed-text-v1.5": {
+    "ndcg_at_10": 0.7672,
+    "source": "results/nomic-ai__nomic-embed-text-v1.5/b0753ae76394dd36bcfb912a46018088bca48be0/LMEB_SciFact.json"
+  },
+  "Qwen/Qwen3-Embedding-0.6B": {
+    "ndcg_at_10": 0.80065,
+    "source": "results/Qwen__Qwen3-Embedding-0.6B/b22da495047858cce924d27d76261e96be6febc0/LMEB_SciFact.json"
+  },
+  "Qwen/Qwen3-Embedding-4B": {
+    "ndcg_at_10": 0.79986,
+    "source": "results/Qwen__Qwen3-Embedding-4B/636cd9bf47d976946cdbb2b0c3ca0cb2f8eea5ff/LMEB_SciFact.json"
+  }
+}
