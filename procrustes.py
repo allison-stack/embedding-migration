@@ -141,13 +141,18 @@ def run_pair(source: str, target: str, train_size: int = 5000, seed: int = 42):
     tgt_dim = tgt_docs.shape[1]
     same_dim = src_dim == tgt_dim
 
+    # Stack train docs + ALL queries so the map sees both subspaces
+    src_train = np.concatenate([src_docs[train_idx], src_queries], axis=0)
+    tgt_train = np.concatenate([tgt_docs[train_idx], tgt_queries], axis=0)
+    print(f"  training pairs: {len(src_train)} ({len(train_idx)} docs + {len(src_queries)} queries)")
+
     t0 = time.time()
     if same_dim:
         method = "orthogonal_procrustes"
-        M = orthogonal_procrustes(src_docs[train_idx], tgt_docs[train_idx])
+        M = orthogonal_procrustes(src_train, tgt_train)
     else:
         method = "least_squares"
-        M = least_squares(src_docs[train_idx], tgt_docs[train_idx])
+        M = least_squares(src_train, tgt_train)
 
     train_time = time.time() - t0
     print(f"  method: {method} ({src_dim}→{tgt_dim}), solved in {train_time:.3f}s")
