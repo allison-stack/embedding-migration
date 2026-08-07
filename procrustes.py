@@ -204,7 +204,18 @@ def main():
                     help="Run all ordered pairs of models")
     ap.add_argument("--train-size", type=int, default=5000)
     ap.add_argument("--seed", type=int, default=42)
+    ap.add_argument("--emb-dir", type=str, default=None)
+    ap.add_argument("--corpus-dir", type=str, default=None)
+    ap.add_argument("--results-dir", type=str, default=None)
     args = ap.parse_args()
+
+    global EMBED_DIR, CORPUS_DIR, RESULTS_DIR
+    if args.emb_dir:
+        EMBED_DIR = Path(args.emb_dir)
+    if args.corpus_dir:
+        CORPUS_DIR = Path(args.corpus_dir)
+    if args.results_dir:
+        RESULTS_DIR = Path(args.results_dir)
 
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
